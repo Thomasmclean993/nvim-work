@@ -29,6 +29,7 @@ require("lazy").setup({
   install = { colorscheme = { "tokyonight" } },
   checker = { enabled = true },
 })
+vim.opt.termguicolors = true
 
 require("ibl").setup()
 
