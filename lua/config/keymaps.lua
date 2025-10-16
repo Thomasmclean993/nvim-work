@@ -69,6 +69,7 @@ vim.keymap.set(
 vim.keymap.set("i", "jf", "<Esc><Esc>", opts)
 
 -- Neotree keymaps
+vim.keymap.set("n", "_", "<cmd>Neotree show<CR>", { desc = "Close in Neotree" })
 vim.keymap.set("n", "-", "<cmd>Neotree close<CR>", { desc = "Close in Neotree" })
 vim.keymap.set("n", "<leader><leader>", "<cmd>update", { desc = "Update" })
 vim.keymap.set("n", "<leader><leader>q", "<cmd>update", { desc = "Update and quit" })
