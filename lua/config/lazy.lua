@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -31,24 +31,6 @@ require("lazy").setup({
 })
 
 require("ibl").setup()
-
-function open_float_term()
-  local buf = vim.api.nvim_create_buf(false, true)
-  local width = 80
-  local height = 20
-  local opts = {
-    relative = "editor",
-    width = width,
-    height = height,
-    col = vim.o.columns - width,
-    row = vim.o.lines - height,
-    style = "minimal",
-  }
-  vim.api.nvim_open_win(buf, true, opts)
-  vim.cmd("terminal")
-end
-
-vim.api.nvim_create_user_command("FloatTerm", open_float_term, {})
 
 require("config.keymaps")
 require("config.treesitter-config")
