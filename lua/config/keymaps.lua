@@ -33,9 +33,9 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Window management
-vim.keymap.set("n", "<leader>v", "<C-w>v", opts) -- split window vertically
-vim.keymap.set("n", "<leader>h", "<C-w>s", opts) -- split window horizontally
-vim.keymap.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
+vim.keymap.set("n", "<leader>v", "<C-w>v", opts)      -- split window vertically
+vim.keymap.set("n", "<leader>h", "<C-w>s", opts)      -- split window horizontally
+vim.keymap.set("n", "<leader>se", "<C-w>=", opts)     -- make split windows equal width & height
 vim.keymap.set("n", "<leader>xs", ":close<CR>", opts) -- close current split window
 
 -- Navigate between splits
@@ -83,9 +83,14 @@ vim.keymap.set("t", "<leader>tt", function()
   fterm:toggle()
 end, { desc = "[T]oggle [T]erminal" })
 
+-- LSP keymaps
 vim.keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format code" })
 vim.keymap.set("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to Definition" })
 vim.keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Find References" })
 vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Hover Documentation" })
 vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Action" })
 vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
+
+-- Todo.nvim keymaps
+vim.keymap.set("n", "<leader>td", ":Todo<CR>", { desc = "Open Todos scratch file" })
+vim.keymap.set("n", "<leader>to", ":Todo Today<CR>", { desc = "Open today's Todos" })

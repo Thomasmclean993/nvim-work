@@ -97,8 +97,8 @@ return {
         -- When you move your cursor, the highlights will be cleared (the second autocommand).
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if
-          client
-          and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf)
+            client
+            and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf)
         then
           local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
           vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -167,11 +167,11 @@ return {
     --  By default, Neovim doesn't support everything that is in the LSP specification.
     --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
     --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
-    local capabilities = vim.lsp.protocal.make_client_capabilities()
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
 
     local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    local capabilities = vim.tbl_deep_extent("force", capabilities.cmp_capabilites, {
+    capabilities = vim.tbl_deep_extend("force", capabilities, cmp_capabilities, {
       textDocument = {
         foldingRange = {
           dynamicRegistration = false,
@@ -180,7 +180,6 @@ return {
       },
     })
 
-    server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
     -- Enable the following language servers
     --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
     --
@@ -231,28 +230,25 @@ return {
       --
 
       lua_ls = {
-        -- cmd = { ... },
-        -- filetypes = { ... },
-        -- capabilities = {},
         settings = {
           Lua = {
-            runtime = { version = "LuaJIT" },
+            runtime = {
+              version = "LuaJIT",
+            },
+            diagnostics = {
+              globals = { "vim" }, -- ✅ fixes “undefined global vim”
+              disable = { "missing-fields" },
+            },
             workspace = {
               checkThirdParty = false,
-              -- Tells lua_ls where to find all the Lua files that you have loaded
-              -- for your neovim configuration.
-              library = {
-                "${3rd}/luv/library",
-                unpack(vim.api.nvim_get_runtime_file("", true)),
-              },
-              -- If lua_ls is really slow on your computer, you can try this instead:
-              -- library = { vim.env.VIMRUNTIME },
+              library = vim.api.nvim_get_runtime_file("", true),
+            },
+            telemetry = {
+              enable = false,
             },
             completion = {
               callSnippet = "Replace",
             },
-            telemetry = { enable = false },
-            diagnostics = { disable = { "missing-fields" } },
           },
         },
       },
@@ -273,7 +269,6 @@ return {
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
-      "stylua", -- Used to format Lua code
       "bash-language-server",
       "black",
       "checkmake",
