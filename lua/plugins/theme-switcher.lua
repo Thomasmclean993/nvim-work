@@ -35,6 +35,11 @@ return {
           name = "tokyonight",
           colorscheme = "tokyonight",
         },
+        {
+          name = "oasis",
+          colorscheme = "oasis-midnight",
+        },
+
       },
       livePreview = true,
     })
