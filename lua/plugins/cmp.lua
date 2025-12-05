@@ -39,6 +39,7 @@ return {
         }),
       }),
       sources = cmp.config.sources({
+        { name = "copilot" }, -- make sure copilot is first
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },

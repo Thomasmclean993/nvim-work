@@ -75,7 +75,7 @@ vim.keymap.set("n", "<leader><leader>", "<cmd>update", { desc = "Update" })
 vim.keymap.set("n", "<leader><leader>q", "<cmd>update", { desc = "Update and quit" })
 
 -- Themery keymaps
-vim.keymap.set("n", "<leader>tt", function()
+vim.keymap.set("n", "<leader>ts", function()
   local themery = require("themery")
   local currentTheme = themery.getCurrentTheme()
   if currentTheme and currentTheme.name == "rose-pine" then
