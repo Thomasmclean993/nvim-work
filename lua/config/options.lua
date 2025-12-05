@@ -8,15 +8,15 @@ vim.opt.laststatus = 3
 vim.opt.cmdheight = 2
 -- Make line numbers default
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cursorline = true
 
 vim.opt.expandtab = true -- Convert Tabs to spaces
-vim.opt.shiftwidth = 4 --Amount to indent with << and >>
+vim.opt.shiftwidth = 4   --Amount to indent with << and >>
 
-vim.opt.tabstop = 4 --How many spaces are shown per tab
-vim.opt.softtabstop = 4 -- How many spaces are applied when pressing Tab
+vim.opt.tabstop = 4      --How many spaces are shown per tab
+vim.opt.softtabstop = 4  -- How many spaces are applied when pressing Tab
 
 -- Keep identation from previous line
 vim.opt.autoindent = true

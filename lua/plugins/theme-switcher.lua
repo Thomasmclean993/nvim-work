@@ -37,7 +37,11 @@ return {
         },
         {
           name = "oasis",
-          colorscheme = "oasis-midnight",
+          colorscheme = "oasis-mirage",
+        },
+        {
+          name = "rose-pine",
+          colorscheme = "rose-pine",
         },
 
       },

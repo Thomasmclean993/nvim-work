@@ -48,7 +48,7 @@ return {
       neotest.run.run(vim.fn.expand("%"))
     end, vim.tbl_extend("force", opts, { desc = "Run file tests" }))
 
-    map("n", "<leader>td", function()
+    map("n", "<leader>tD", function()
       neotest.run.run({ strategy = "dap" })
     end, vim.tbl_extend("force", opts, { desc = "Debug nearest test" }))
 

@@ -3,8 +3,8 @@ return {
   event = "InsertEnter",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp", -- source for neovim's built in LSP
-    "hrsh7th/cmp-buffer", -- source for text in buffer
-    "hrsh7th/cmp-path", -- source for file system paths
+    "hrsh7th/cmp-buffer",   -- source for text in buffer
+    "hrsh7th/cmp-path",     -- source for file system paths
     {
       "L3MON4D3/LuaSnip",
       version = "v2.*",
@@ -33,8 +33,8 @@ return {
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.close(),
-        ["<CR>"] = cmp.mapping.confirm({ -- Use Enter to confirm the current selection
-          select = true, -- accepts current or first if none selected
+        ["<Tab>"] = cmp.mapping.confirm({         -- Use Enter to confirm the current selection
+          select = true,                          -- accepts current or first if none selected
           behavior = cmp.ConfirmBehavior.Replace, -- replaces existing text
         }),
       }),
