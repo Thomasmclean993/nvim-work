@@ -74,14 +74,16 @@ vim.keymap.set("n", "-", "<cmd>Neotree close<CR>", { desc = "Close in Neotree" }
 vim.keymap.set("n", "<leader><leader>", "<cmd>update", { desc = "Update" })
 vim.keymap.set("n", "<leader><leader>q", "<cmd>update", { desc = "Update and quit" })
 
--- Fterm keymaps
-local fterm = require("FTerm")
-vim.keymap.set("n", "<leader>tt", function()
-  fterm:toggle()
-end, { desc = "[T]oggle [T]terminal" })
-vim.keymap.set("t", "<leader>tt", function()
-  fterm:toggle()
-end, { desc = "[T]oggle [T]erminal" })
+-- Themery keymaps
+vim.keymap.set("n", "<leader>ts", function()
+  local themery = require("themery")
+  local currentTheme = themery.getCurrentTheme()
+  if currentTheme and currentTheme.name == "rose-pine" then
+    themery.setThemeByName("oasis", true)
+  else
+    themery.setThemeByName("rose-pine", true)
+  end
+end, { noremap = true })
 
 -- LSP keymaps
 vim.keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format code" })

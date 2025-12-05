@@ -1,6 +1,6 @@
 return {
   "thesimonho/kanagawa-paper.nvim",
-  lazy = false,
-  priority = 800,
+  lazy = true,
+  -- priority = 800,
   opts = {},
 }
