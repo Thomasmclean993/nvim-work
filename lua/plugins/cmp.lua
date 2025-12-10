@@ -1,3 +1,5 @@
+-- Completion plugin configuration for nvim-cmp
+
 return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
