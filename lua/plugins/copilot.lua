@@ -1,6 +1,7 @@
 return {
   -- Main Copilot plugin
   "zbirenbaum/copilot.lua",
+  enabled = false,
   dependencies = {
     -- The completion integration plugin
     {
@@ -18,8 +19,8 @@ return {
       hide_during_completion = vim.g.ai_cmp,
       keymap = {
         accept = "<C-A>", -- Accept suggestion
-        next = "<C-J>",   -- Next Copilot suggestion
-        prev = "<C-K>",   -- Previous Copilot suggestion
+        next = "<C-J>", -- Next Copilot suggestion
+        prev = "<C-K>", -- Previous Copilot suggestion
       },
     },
     panel = { enabled = false },
