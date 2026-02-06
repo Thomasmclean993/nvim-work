@@ -32,6 +32,19 @@ vim.keymap.set("n", "<C-w>", "<cmd> wqa <CR>", opts)
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 
+-- Operator: replace selection/motion with system clipboard
+vim.keymap.set("n", "gR", function()
+  vim.o.operatorfunc = "v:lua.ReplaceWithClipboard"
+  return "g@"
+end, { expr = true, desc = "Replace with clipboard (operator)" })
+
+function _G.ReplaceWithClipboard(type)
+  -- Delete motion/selection to black hole then paste clipboard
+  -- `[ and `] are marks for start/end of last changed/yanked text
+  vim.cmd('normal! `[v`]"_d')
+  vim.cmd('normal! "+P')
+end
+
 -- Find and center
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
