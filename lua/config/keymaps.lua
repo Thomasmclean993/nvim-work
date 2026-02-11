@@ -113,3 +113,12 @@ vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = 
 -- Todo.nvim keymaps
 vim.keymap.set("n", "<leader>td", ":Todo<CR>", { desc = "Open Todos scratch file" })
 vim.keymap.set("n", "<leader>to", ":Todo Today<CR>", { desc = "Open today's Todos" })
+
+-- Code Companion keymaps
+--- Normal mode: open/toggle Chat
+vim.keymap.set("n", "<leader>cc", "<cmd>CodeCompanionChat<CR>", { desc = "CodeCompanion: Chat" })
+vim.keymap.set("n", "<leader>ca", "<cmd>CodeCompanionActions<CR>", { desc = "CodeCompanion: Actions" })
+--- Visual mode: open/toggle Chat, Actions, or Inline edit for the selected range
+vim.keymap.set("v", "<leader>cc", ":<C-u>'<,'>CodeCompanionChat<CR>", { desc = "CodeCompanion: Chat (range)" })
+vim.keymap.set("v", "<leader>ci", ":<C-u>'<,'>CodeCompanion<CR>", { desc = "CodeCompanion: Inline edit (range)" })
+vim.keymap.set("v", "<leader>ca", ":<C-u>'<,'>CodeCompanionActions<CR>", { desc = "CodeCompanion: Actions (range)" })
