@@ -17,12 +17,12 @@ return {
     },
     interactions = {
       chat = {
-        adapter = "ollama",
-        model = "codellama",
+        adapter = "copilot",
+        model = "claude-4.5",
       },
       inline = {
-        adapter = "ollama",
-        model = "codellama",
+        adapter = "copilot",
+        model = "claude-4.5",
         accept_change = {
           modes = { n = "cca" },
           description = "Accept the Suggested Change? You Cheat!",
