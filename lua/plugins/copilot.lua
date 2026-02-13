@@ -30,11 +30,11 @@ return {
       end, { desc = "Copilot: Accept suggestion" })
 
       -- Cycle suggestions
-      vim.keymap.set("i", "<C-h>", function()
+      vim.keymap.set("i", "<C-j>", function()
         require("copilot.suggestion").next()
       end, { desc = "Copilot: Next suggestion" })
 
-      vim.keymap.set("i", "<C-H>", function()
+      vim.keymap.set("i", "<C-k>", function()
         require("copilot.suggestion").prev()
       end, { desc = "Copilot: Previous suggestion" })
 
