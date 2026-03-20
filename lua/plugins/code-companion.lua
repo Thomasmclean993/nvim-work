@@ -1,6 +1,7 @@
 return {
   "olimorris/codecompanion.nvim",
   version = "^18.0.0",
+  enabled = false,
   opts = {
     display = {
       action_palette = {

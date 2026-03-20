@@ -1,22 +1,27 @@
 # TODO
 
-## 02-11-2026
+## 02-24-2026
 
-- [x] Get Reviews for FPP change
-- [x] Start work on Ben-484
-  - [x] Coverage error handling
-  - [x] Add error to discovery render error list
-  - [x] Create controller_test, maybe
+- [x] collect testing evidence for ben494
+  - [x] unreserve master testng and cov1 EG
+
+- [ ] Confirm with standly that DB Pr is deployed in master integration
+
+- [ ] Add Email to terraform key vault
+
+## 02-17-2026
+
+- [x] When master_plan_id = 6000 on request, plan_channel always results as "Medicare"
+  - [x] Create a test to catch on this
+  - [x] Add logic to build_payer to add the string
 
 ## Project Task
-
-- [x] Create new branch from 477
-- [x] Create finthrive error handling that handles "UnabletoRespondAtCurrentTime"
-- [x] Add test case
 
 ## QOL (Quality of Life)
 
 - [x] Add copilot back in and combine with codecompanion
+- [ ] Add to wezterm a way to add prefix number to tab name automatically
+- [ ] Add zellij and config to use meh mod
 - [ ] Remap zshrc keybinding
 - [ ] Find a way to add files using cmdline
 - [ ] Create bat config and push up to github
@@ -31,4 +36,14 @@
 
 ## Possible Ideas
 
--
+---
+
+- [ ] Breaking down the four ds for ai
+
+---
+
+### Standup
+
+- [ ] New Pr for New cert for medimpact
+- [ ] Looks for reviews and RMT
+- [ ] Still waiting on DBAs for update on master_int

@@ -3,6 +3,7 @@
 return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
+  enabled = true,
   dependencies = {
     "hrsh7th/cmp-nvim-lsp", -- source for neovim's built in LSP
     "hrsh7th/cmp-buffer", -- source for text in buffer

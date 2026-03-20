@@ -82,7 +82,7 @@ return {
             {
               icon = " ",
               title = "Open PRs",
-              cmd = "gh pr list -L 3",
+              cmd = "gh pr list -L 5 -A tmclean",
               height = 7,
             },
             {

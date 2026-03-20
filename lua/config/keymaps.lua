@@ -112,7 +112,7 @@ vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = 
 
 -- Todo.nvim keymaps
 vim.keymap.set("n", "<leader>td", ":Todo<CR>", { desc = "Open Todos scratch file" })
-vim.keymap.set("n", "<leader>to", ":Todo Today<CR>", { desc = "Open today's Todos" })
+vim.keymap.set("n", "<leader>tt", ":Todo Today<CR>", { desc = "Open today's Todos" })
 
 vim.keymap.set("n", "<leader>ta", function()
   local desc = vim.fn.input("Todo description: ")
