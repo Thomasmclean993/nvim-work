@@ -24,15 +24,12 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
     { import = "themes" },
-    { import = "plugins.cmp" },
   },
   install = { colorscheme = { "rose-pine" } },
   checker = { enabled = true },
 })
 
 vim.cmd.colorscheme("rose-pine")
-
-require("ibl").setup()
 
 require("config.keymaps")
 require("config.treesitter-config")

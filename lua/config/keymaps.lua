@@ -1,11 +1,6 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
--- -- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 
 -- For conciseness
 local opts = { noremap = true, silent = true }
@@ -94,13 +89,20 @@ vim.keymap.set("n", "<leader><leader>q", "<cmd>update", { desc = "Update and qui
 -- Themery keymaps
 vim.keymap.set("n", "<leader>ts", function()
   local themery = require("themery")
-  local currentTheme = themery.getCurrentTheme()
-  if currentTheme and currentTheme.name == "rose-pine" then
-    themery.setThemeByName("oasis", true)
-  else
-    themery.setThemeByName("rose-pine", true)
+  local themes = { "rose-pine", "bamboo", "kanagawa-paper", "nightfox", "miasma" }
+  local current = themery.getCurrentTheme()
+  local currentName = current and current.name or ""
+  local nextTheme = themes[1]
+  for i, name in ipairs(themes) do
+    if name == currentName then
+      nextTheme = themes[(i % #themes) + 1]
+      break
+    end
   end
-end, { noremap = true })
+  themery.setThemeByName(nextTheme, true)
+end, { noremap = true, desc = "Cycle theme" })
+
+vim.keymap.set("n", "<leader>tS", "<cmd>Themery<CR>", { noremap = true, desc = "Open Themery" })
 
 -- LSP keymaps
 vim.keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format code" })

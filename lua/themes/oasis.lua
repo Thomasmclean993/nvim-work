@@ -1,9 +1,7 @@
 return {
   "uhs-robert/oasis.nvim",
   lazy = true,
-  -- priority = 1000,
   config = function()
-    require("oasis").setup()     -- (see Configuration below for all customization options)
-    vim.cmd.colorscheme("oasis") -- After setup, apply theme (or a any style like "oasis-night")
-  end
+    require("oasis").setup()
+  end,
 }

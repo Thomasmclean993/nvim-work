@@ -113,7 +113,7 @@ return {
         { section = "startup" },
       },
     },
-    explorer = { enabled = false },
+    explorer = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
     notifier = {
