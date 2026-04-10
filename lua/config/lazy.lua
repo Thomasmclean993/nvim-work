@@ -35,4 +35,4 @@ vim.cmd.colorscheme("rose-pine")
 require("ibl").setup()
 
 require("config.keymaps")
--- require("config.treesitter-config")
+require("config.treesitter-config")

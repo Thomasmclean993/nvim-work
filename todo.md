@@ -1,19 +1,9 @@
 # TODO
 
-## 02-24-2026
+## 04-08-2026
 
-- [x] collect testing evidence for ben494
-  - [x] unreserve master testng and cov1 EG
-
-- [ ] Confirm with standly that DB Pr is deployed in master integration
-
-- [ ] Add Email to terraform key vault
-
-## 02-17-2026
-
-- [x] When master_plan_id = 6000 on request, plan_channel always results as "Medicare"
-  - [x] Create a test to catch on this
-  - [x] Add logic to build_payer to add the string
+- [ ] Download TLDR
+- [ ]
 
 ## Project Task
 

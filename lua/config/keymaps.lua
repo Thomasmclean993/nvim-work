@@ -134,12 +134,3 @@ vim.keymap.set("n", "<leader>tc", function()
     vim.cmd("Todo complete " .. desc)
   end
 end, { desc = "Complete a Todo" })
-
--- Code Companion keymaps
---- Normal mode: open/toggle Chat
-vim.keymap.set("n", "<leader>cc", "<cmd>CodeCompanionChat<CR>", { desc = "CodeCompanion: Chat" })
-vim.keymap.set("n", "<leader>ca", "<cmd>CodeCompanionActions<CR>", { desc = "CodeCompanion: Actions" })
---- Visual mode: open/toggle Chat, Actions, or Inline edit for the selected range
-vim.keymap.set("v", "<leader>cc", ":<C-u>'<,'>CodeCompanionChat<CR>", { desc = "CodeCompanion: Chat (range)" })
-vim.keymap.set("v", "<leader>ci", ":<C-u>'<,'>CodeCompanion<CR>", { desc = "CodeCompanion: Inline edit (range)" })
-vim.keymap.set("v", "<leader>ca", ":<C-u>'<,'>CodeCompanionActions<CR>", { desc = "CodeCompanion: Actions (range)" })

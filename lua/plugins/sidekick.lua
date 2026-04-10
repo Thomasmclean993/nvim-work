@@ -1,6 +1,6 @@
 return {
   "folke/sidekick.nvim",
-  enabled = false,
+  enabled = false, -- set to true when you want to use Sidekick, but make sure to configure it first!
   opts = {
     -- add any options here
     cli = {

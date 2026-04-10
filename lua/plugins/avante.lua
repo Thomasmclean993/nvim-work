@@ -5,6 +5,7 @@ return {
   build = vim.fn.has("win32") ~= 0 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
     or "make",
   event = "VeryLazy",
+  enabled = false, -- set to true when you want to use Avante, but make sure to configure it first!
   version = false, -- Never set this value to "*"! Never!
   ---@module 'avante'
   ---@type avante.Config
@@ -15,6 +16,9 @@ return {
     -- for example
     provider = "copilot", -- or "claude" or "moonshot"
     providers = {
+      copilot = {
+        model = "claude-opus-4.6", -- Use Claude via Copilot
+      },
       claude = {
         endpoint = "https://api.anthropic.com",
         model = "claude-sonnet-4-20250514",
