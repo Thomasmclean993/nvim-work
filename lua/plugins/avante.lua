@@ -5,7 +5,7 @@ return {
   build = vim.fn.has("win32") ~= 0 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
     or "make",
   event = "VeryLazy",
-  enabled = false, -- set to true when you want to use Avante, but make sure to configure it first!
+  enabled = true, -- set to true when you want to use Avante, but make sure to configure it first!
   version = false, -- Never set this value to "*"! Never!
   ---@module 'avante'
   ---@type avante.Config
@@ -17,8 +17,13 @@ return {
     provider = "copilot", -- or "claude" or "moonshot"
     providers = {
       copilot = {
-        model = "claude-opus-4.6", -- Use Claude via Copilot
+        model = "claude-sonnet-4.6", -- default
       },
+      copilot_opus = {
+        __inherited_from = "copilot",
+        model = "claude-opus-4.6", -- fallback
+      },
+      -- ... existing claude, moonshot ...
       claude = {
         endpoint = "https://api.anthropic.com",
         model = "claude-sonnet-4-20250514",
@@ -47,7 +52,6 @@ return {
     "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
     "ibhagwan/fzf-lua", -- for file_selector provider fzf
-    "stevearc/dressing.nvim", -- for input provider dressing
     "folke/snacks.nvim", -- for input provider snacks
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
     "zbirenbaum/copilot.lua",
