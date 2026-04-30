@@ -25,7 +25,6 @@ vim.keymap.set("n", "<C-q>", "<cmd> q <CR>", opts)
 vim.keymap.set("n", "<C-BS>", "<cmd>bd!<CR>", opts)
 
 -- quit and leave nvim
-vim.keymap.set("n", "<C-d>", "<cmd> qa <CR>", opts)
 vim.keymap.set("n", "<C-w>", "<cmd> wqa <CR>", opts)
 
 -- Vertical scroll and center
@@ -53,7 +52,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>v", "<C-w>v", opts) -- split window vertically
 vim.keymap.set("n", "<leader>h", "<C-w>s", opts) -- split window horizontally
 vim.keymap.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
-vim.keymap.set("n", "<leader>xs", ":close<CR>", opts) -- close current split window
+vim.keymap.set("n", "<leader>wc", ":close<CR>", opts) -- close current split window
 
 -- Navigate between splits
 vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", opts)
@@ -61,8 +60,7 @@ vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", opts)
 vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", opts)
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", opts)
 
--- Toggle line wrapping
-vim.keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", opts)
+-- Toggle line wrapping is handled by <leader>uw via Snacks.toggle
 
 -- Replace word under cursor
 vim.keymap.set("n", "<leader>j", "*``cgn", opts)
@@ -102,17 +100,14 @@ vim.keymap.set("n", "<leader>ts", function()
   end
 end, { noremap = true })
 
--- LSP keymaps
-vim.keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format code" })
-vim.keymap.set("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to Definition" })
-vim.keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Find References" })
+-- LSP keymaps (gd, gr, gI, gy handled by Snacks picker; format handled by conform <leader>f)
 vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Hover Documentation" })
 vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Action" })
 vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Rename" })
 
 -- Todo.nvim keymaps
 vim.keymap.set("n", "<leader>td", ":Todo<CR>", { desc = "Open Todos scratch file" })
-vim.keymap.set("n", "<leader>to", ":Todo Today<CR>", { desc = "Open today's Todos" })
+vim.keymap.set("n", "<leader>tt", ":Todo Today<CR>", { desc = "Open today's Todos" })
 
 vim.keymap.set("n", "<leader>ta", function()
   local desc = vim.fn.input("Todo description: ")
@@ -134,12 +129,3 @@ vim.keymap.set("n", "<leader>tc", function()
     vim.cmd("Todo complete " .. desc)
   end
 end, { desc = "Complete a Todo" })
-
--- Code Companion keymaps
---- Normal mode: open/toggle Chat
-vim.keymap.set("n", "<leader>cc", "<cmd>CodeCompanionChat<CR>", { desc = "CodeCompanion: Chat" })
-vim.keymap.set("n", "<leader>ca", "<cmd>CodeCompanionActions<CR>", { desc = "CodeCompanion: Actions" })
---- Visual mode: open/toggle Chat, Actions, or Inline edit for the selected range
-vim.keymap.set("v", "<leader>cc", ":<C-u>'<,'>CodeCompanionChat<CR>", { desc = "CodeCompanion: Chat (range)" })
-vim.keymap.set("v", "<leader>ci", ":<C-u>'<,'>CodeCompanion<CR>", { desc = "CodeCompanion: Inline edit (range)" })
-vim.keymap.set("v", "<leader>ca", ":<C-u>'<,'>CodeCompanionActions<CR>", { desc = "CodeCompanion: Actions (range)" })

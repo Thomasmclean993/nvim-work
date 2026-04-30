@@ -9,7 +9,7 @@ return {
         height = 5,
         padding = 1,
       },
-      { section = "keys",  gap = 1, padding = 1 },
+      { section = "keys", gap = 1, padding = 1 },
       function()
         local in_git = Snacks.git.get_root() ~= nil
         local cmds = {
@@ -29,7 +29,7 @@ return {
           {
             icon = " ",
             title = "Open PRs",
-            cmd = "gh pr list -L 3",
+            cmd = "gh pr list -L 5 -A tmclean",
             height = 7,
           },
           {
@@ -52,5 +52,5 @@ return {
       end,
       { section = "startup" },
     },
-  }
+  },
 }

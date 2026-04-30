@@ -82,7 +82,7 @@ return {
             {
               icon = " ",
               title = "Open PRs",
-              cmd = "gh pr list -L 3",
+              cmd = "gh pr list -L 5 -A tmclean",
               height = 7,
             },
             {
@@ -314,13 +314,6 @@ return {
       desc = "Grep Open Buffers",
     },
     {
-      "<leader>sg",
-      function()
-        Snacks.picker.grep()
-      end,
-      desc = "Grep",
-    },
-    {
       "<leader>sw",
       function()
         Snacks.picker.grep_word()
@@ -349,13 +342,6 @@ return {
         Snacks.picker.autocmds()
       end,
       desc = "Autocmds",
-    },
-    {
-      "<leader>sb",
-      function()
-        Snacks.picker.lines()
-      end,
-      desc = "Buffer Lines",
     },
     {
       "<leader>sc",
@@ -569,13 +555,6 @@ return {
         Snacks.scratch.select()
       end,
       desc = "Select Scratch Buffer",
-    },
-    {
-      "<leader>n",
-      function()
-        Snacks.notifier.show_history()
-      end,
-      desc = "Notification History",
     },
     {
       "<leader>bd",

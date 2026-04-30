@@ -52,11 +52,11 @@ return {
       neotest.run.run({ strategy = "dap" })
     end, vim.tbl_extend("force", opts, { desc = "Debug nearest test" }))
 
-    map("n", "<leader>ts", function()
+    map("n", "<leader>tS", function()
       neotest.run.stop()
     end, vim.tbl_extend("force", opts, { desc = "Stop running test" }))
 
-    map("n", "<leader>ta", function()
+    map("n", "<leader>tA", function()
       neotest.run.attach()
     end, vim.tbl_extend("force", opts, { desc = "Attach to nearest running test" }))
 

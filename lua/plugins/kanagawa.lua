@@ -1,13 +1,13 @@
 return {
   "rebelot/kanagawa.nvim",
-  config=function()
-    require('kanagawa').setup({
-        compile=true,
-        theme="dragon"
-  });
-  vim.cmd("colorscheme kanagawa");
+  lazy = true,
+  config = function()
+    require("kanagawa").setup({
+      compile = true,
+      theme = "dragon",
+    })
   end,
-build = function()
-  vim.cmd("KanagawaCompile")
-end,
+  build = function()
+    vim.cmd("KanagawaCompile")
+  end,
 }

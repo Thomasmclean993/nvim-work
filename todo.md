@@ -1,22 +1,17 @@
 # TODO
 
-## 02-11-2026
+## 04-08-2026
 
-- [x] Get Reviews for FPP change
-- [x] Start work on Ben-484
-  - [x] Coverage error handling
-  - [x] Add error to discovery render error list
-  - [x] Create controller_test, maybe
+- [ ] Download TLDR
+- [ ]
 
 ## Project Task
-
-- [x] Create new branch from 477
-- [x] Create finthrive error handling that handles "UnabletoRespondAtCurrentTime"
-- [x] Add test case
 
 ## QOL (Quality of Life)
 
 - [x] Add copilot back in and combine with codecompanion
+- [ ] Add to wezterm a way to add prefix number to tab name automatically
+- [ ] Add zellij and config to use meh mod
 - [ ] Remap zshrc keybinding
 - [ ] Find a way to add files using cmdline
 - [ ] Create bat config and push up to github
@@ -31,4 +26,14 @@
 
 ## Possible Ideas
 
--
+---
+
+- [ ] Breaking down the four ds for ai
+
+---
+
+### Standup
+
+- [ ] New Pr for New cert for medimpact
+- [ ] Looks for reviews and RMT
+- [ ] Still waiting on DBAs for update on master_int
